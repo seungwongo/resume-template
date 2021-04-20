@@ -33,7 +33,7 @@
   <section id="main-img" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="80">
       <h1>Seungwon Go</h1>
-      <p>I'm <span class="typed" data-typed-items="Developer$UX Consultant$ERP Consultant$Writer$Youtuber$Investor"></span></p>
+      <p>저는 <span class="typed"></span></p>
       <div class="social-links">
         <a href="https://www.youtube.com/channel/UCeyUnRL6sG_GQJRus89sZ8Q" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
         <a href="https://twitter.com/SeungwonGo" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
@@ -399,6 +399,11 @@
     (function () {
       "use strict";
 
+      const typedItems = [
+        '소프트웨어 기술을 통해 세상에 선한 영향력을 주고 싶은 22년차 소프트웨어 개발자입니다.',
+        '지식을 나누는 것을 좋아하고 항상 새로운 기술을 익히는 것을 즐겨요.'
+      ];
+
       let navLinkItems = document.querySelectorAll('#navbar .scrollto', true)
       const navLinkItemsActive = () => {
         let position = window.scrollY + 100
@@ -457,13 +462,11 @@
 
       const typed = document.querySelector('.typed')
       if (typed) {
-        let typed_strings = typed.getAttribute('data-typed-items')
-        typed_strings = typed_strings.split('$')
         new Typed('.typed', {
-          strings: typed_strings,
+          strings: typedItems,
           loop: true,
-          typeSpeed: 100,
-          backSpeed: 80,
+          typeSpeed: 50,
+          backSpeed: 30,
           backDelay: 2000
         });
       }
